@@ -1,0 +1,91 @@
+/* Importa a fonte Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Estilos gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    color: white;
+    font-size: 2.2rem; /* Tamanho de fonte aumentado */
+    font-weight: 700; /* Negrito para destacar */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: 1.2rem; /* Tamanho de fonte aumentado */
+    padding: 5px 10px;
+}
+
+header nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Estilos do carrossel */
+.carousel-container {
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto; /* Centraliza o carrossel */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    max-width: 90%; /* Limita a largura máxima */
+}
+
+.carousel-container h2 a {
+    font-size: 1.8rem; /* Tamanho de fonte aumentado */
+    color: #333;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center; /* Centraliza o carrossel */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.carousel-wrapper {
+    min-width: 450px; /* Define a largura mínima */
+    margin-right: 15px;
+    transition: transform 0.3s ease; /* Animação suave */
+}
+
+.carousel-wrapper:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.carousel img {
+    width: 450px; /* Define a largura padrão */
+    height: 300px; /* Define a altura padrão */
+    object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
+    border-top-left-radius: 20px; /* Arredonda a lateral superior esquerda */
+    border-top-right-radius: 20px; /* Arredonda a lateral superior direita */
+    border-bottom-left-radius: 20px; /* Arredonda a lateral inferior esquerda */
+    border-bottom-right-radius: 20px; /* Arredonda a lateral inferior direita */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
