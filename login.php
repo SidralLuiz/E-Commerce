@@ -9,8 +9,11 @@
 <body>
 <main>
 <form action="<?=$_SERVER["PHP_SELF"]?>" method="post">
-        <label for="cpf">Insira seu nome de usuário</label>
-        <input type="text" name="cpf" id="cpf" value="">
+        <label for="cpf">Insira seu cpf</label>
+        <input type="text" name="cpf" id="cpf" maxlength="14" 
+        placeholder="xxx.xxx.xxx-xx" 
+        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+        required>
         <label for="senha">Insira sua senha</label>
         <input type="password" name="senha" id="senha" value="">
         <input type="submit" value="Enviar" name="botão">s  
@@ -35,14 +38,22 @@ $enviar = null;
     $con->select_db($db);
     $query = "SELECT * FROM Usuario WHERE cpf='$cpf' AND senha='$senha'";
     $result = $con->query($query);
-    
+   // var_dump($result);
     if ($result instanceof mysqli_result) {
        
         if ($result->num_rows > 0) {
-         
-            header('Location: home.php');
+          //  $nome = $result2;
+            $con2 = new mysqli($host, $user, $pass);
+            $con2->select_db($db);
+            $query2 = "SELECT nome FROM Usuario WHERE cpf='$cpf'";
+            $result2 = $con2->query($query2);
+            $row = $result2->fetch_object();
+            $nome = $row->nome;
+            setcookie('nome',$nome,time()+3600);
+           header('Location: home.php');
             exit();  
         } else {
+            $session = false;
             echo "<h1>Usuário não encontrado!</h1>";
         }
     } else {
@@ -50,7 +61,7 @@ $enviar = null;
         echo "Erro na consulta: " . $con->error;
     }
 } else {
-    echo "Preencha todos os campos corretamente!";
+    echo "<h1>Preencha todos os campos corretamente!";
 }
   ?>
     

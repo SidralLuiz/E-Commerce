@@ -11,6 +11,7 @@
     <header>
         <h1><a href="home.php">Website Genérico</a></h1>
         <nav>
+            
             <ul>
                 <li><a href="bones.php">Bones</a></li>
                 <li><a href="calcados.php">Calçados</a></li>
@@ -21,13 +22,24 @@
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="carrinho.html">Carrinho</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="cadastro.html">Cadastre-se</a></li>
-            </ul>
-        </nav>
-    </header>
+                <li><a href="">Nome Usuário</a></li>
+               
+                </ul>
+             
+                 <?php 
+                                 
+       $user = $_COOKIE['nome'] ?? "não";
+       if(isset($user)){
+           // echo "<header><ul><li>Bem Vindo $user";
+       }
+       else {
+        echo "<li>" . htmlspecialchars($fruta) . "</li>";
+       }
+                 ?>
+          </nav>
+          </header>
     <main class="carousel-container">
-        <h2><a href="#">Bonés</a></h2>
+        <h2><a href="bones.php">Bonés</a></h2>
         <div class="carousel">
             <?php
             $pag = "bones";
@@ -45,6 +57,7 @@
                     <div class='carousel-wrapper'>
                         <a href='#'>
                             <img src='imgs/$pag/$imagem' alt='Imagem'>
+                        
                         </a>
                     </div>";
                 }
@@ -54,9 +67,9 @@
             ?>
         </div>
     </main>
-    <h1>Novidades</h1>
+    
     <main class="carousel-container">
-        <h2><a href="#">Tênis</a></h2>
+        <h2><a href="calcados.php">Tênis</a></h2>
         <div class="carousel">
             <?php
             $pag2 = "calcados";
@@ -86,7 +99,7 @@
 
 
     <main class="carousel-container">
-        <h2><a href="#">Moletons</a></h2>
+        <h2><a href="casacos.php">Moletons</a></h2>
         <div class="carousel">
             <?php
             $pag3 = "casacos";
@@ -116,7 +129,7 @@
 
 
     <main class="carousel-container">
-        <h2><a href="#">Cintos</a></h2>
+        <h2><a href="cintos.php">Cintos</a></h2>
         <div class="carousel">
             <?php
             $pag4 = "cintos";
@@ -145,7 +158,7 @@
     </main>
 
     <main class="carousel-container">
-        <h2><a href="#">Cropeds</a></h2>
+        <h2><a href="femininas.php">Cropeds</a></h2>
         <div class="carousel">
             <?php
             $pag5 = "fem";
@@ -174,7 +187,7 @@
     </main>
     
     <main class="carousel-container">
-        <h2><a href="#">Camisetas</a></h2>
+        <h2><a href="masculinas.php">Camisetas</a></h2>
         <div class="carousel">
             <?php
             $pag6 = "mas";

@@ -9,10 +9,16 @@
 <body>
     <main>
         <form action="cadastro.php" method="post">
-        <label for="cpf">Insira seu nome de usuário</label>
-        <input type="text" name="cpf" id="cpf" value="">
+        <label for="cpf">Insira seu cpf</label>
+        <input type="text" name="cpf" id="cpf"  maxlength="14" 
+        placeholder="xxx.xxx.xxx-xx" 
+        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+        required>
+        <label for="nome">Insira seu nome</label>
+        <input type="text" name="nome" id="nome" value="">
         <label for="senha">Insira sua senha</label>
-        <input type="password" name="senha" id="senha" value="">
+        <input type="password" name="senha" id="senha" 
+        minlength="8" maxlength="56"  placeholder="8-56 @$% aZ">
         <input type="submit" value="Enviar" name="botão" >
         </form>
     </main>    
