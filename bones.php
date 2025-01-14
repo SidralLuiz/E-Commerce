@@ -29,7 +29,9 @@
    
         <main class="carousel-container">
         <h2><a href="#">Bonés</a></h2>
-     <div class="carousel">
+    
+        <div class="carousel">
+       
         <?php
         $pag = "bones";
         $conn = new mysqli('localhost', 'root', '', 'teste');
@@ -40,16 +42,22 @@
         $stmt->execute();
         $result = $stmt->get_result();
         $linhas = $result->num_rows;
-        
+         $x = 1;
+         $y = 0;
          if ($result->num_rows > 0 ) {
             
             while ($row = $result->fetch_assoc()) {
-                $imagem = htmlspecialchars($row['url']);
+                $x=$x+1;
+                $y = $y+1;
+              
+                $imagem = htmlspecialchars(string: $row['url']);
+                
                 echo "
                 <div class='carousel-item'>
-                    <a href='#'>
+                    <a href='details$y.php'>
                         <img src='imgs/$pag/$imagem' alt='Imagem'>
-                        
+                        <p>Boné $x</p>         
+                        header(      
                     </a>
                 </div>";
             }
